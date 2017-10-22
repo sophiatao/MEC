@@ -20,6 +20,9 @@ export default TabNavigator(
     Settings: {
       screen: SettingsScreen,
     },
+    Links: {
+      screen: LinksScreen,
+    },
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -34,8 +37,8 @@ export default TabNavigator(
             break;
           case 'Links':
             iconName = Platform.OS === 'ios'
-              ? `ios-link${focused ? '' : '-outline'}`
-              : 'md-link';
+              ? `ios-clipboard${focused ? '' : '-outline'}`
+              : 'md-clipboard';
             break;
           case 'Settings':
             iconName = Platform.OS === 'ios'
