@@ -21,19 +21,15 @@ export default class HomeScreen extends React.Component {
             ]
         }
         this.addInput = this.addInput.bind(this);
-        this.navigateToCrop = this.navigateToCrop.bind(this);
     }
+
 
     renderItem = ({item}) => {
     return (
-        <TouchableOpacity onPress={() => {const { navigate } = this.props.navigation; navigate('Crops', { text: item.text, waterVolume: this.state.waterVolume, min: this.state.min, max: this.state.max,})}}><Row style={styles.row}><Text>{item.text}</Text></Row></TouchableOpacity>
+        <TouchableOpacity onPress={() => {const { navigate } = this.props.navigation; navigate('Crops', { text: item.text, waterVolume: item.waterVolume, min: item.min, max: item.max,})}}><Row style={styles.row}><Text>{item.text}</Text></Row></TouchableOpacity>
     )
   }
 
-  navigateToCrop(itemtext) {
-    const { navigate } = this.props.navigation;
-    navigate('CropProfile', { text: itemtext, waterVolume: this.state.waterVolume, min: this.state.min, max: this.state.max,})
-  }
 
   addInput(content) {
     arr = this.state.sampleText;

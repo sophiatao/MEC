@@ -20,5 +20,5 @@ const Nav = StackNavigator({
         navigationOptions: {
       header: null,
     },},
-    Crop: {screen: CropProfile},
+    Crops: {screen: CropProfile},
 })

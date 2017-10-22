@@ -24,7 +24,7 @@ export default class Input extends Component {
       <TextInput
         style={styles.input}
         value={text}
-        placeholder="{Add crop profile}"
+        placeholder="Enter crop name here"
         onChangeText={this.onChangeText}
         onSubmitEditing={this.onSubmitEditing}
       />
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
     padding: 15,
     height: 50,
     fontFamily: 'Helvetica',
-    fontWeight: '200',
+    fontWeight: '100',
   },
 })

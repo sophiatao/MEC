@@ -8,14 +8,19 @@ export default class CropProfile extends React.Component {
     constructor(props) {
         super(props);
     }
-  static navigationOptions = {
-    title: "Crop",
-  };
+static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.text}`,
+  });
 
 
   render() {
+     const { params } = this.props.navigation.state;
     return (
-        <Text> {this.props.navigation.state.text}</Text>
+      <View style={styles.container}>
+        <Text style={styles.row}> Water Volume: {params.waterVolume}</Text>
+        <Text style={styles.row}> Minimum: {params.min} </Text>
+        <Text style={styles.row}> Maximum: {params.max} </Text>
+        </View>
     )
   }
 }
@@ -25,13 +30,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: 'skyblue',
+    backgroundColor: 'white',
   },
   row: {
-    marginBottom: 5,
-    padding: 15,
-    backgroundColor: '#22485e',
-    borderRadius: 10,
+    marginTop: 5,
+    padding: 5,
   },
   text: {
     color: '#fff',
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     fontSize: 24,
     marginLeft: 0,
-    backgroundColor: 'skyblue',
+    backgroundColor: 'white',
     marginTop: 0,
     color: '#22485e',
     fontFamily: 'Helvetica',
@@ -50,3 +53,4 @@ const styles = StyleSheet.create({
   },
 
 });
+
