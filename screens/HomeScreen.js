@@ -52,7 +52,7 @@ export default class HomeScreen extends React.Component {
      * content, we just wanted to give you a quick view of your config */
     return (
         <View style={styles.container}>
-        <Text style={styles.header}>To add crop, enter crop name and pull down to update</Text>
+        <Text style={styles.header}>To add a new crop profile, type in the name and pull down to update</Text>
         <Input addInput={this.addInput} />
         <FlatList
           data={this.state.sampleText}
