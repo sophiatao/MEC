@@ -29,8 +29,8 @@ export default TabNavigator(
         switch (routeName) {
           case 'Home':
             iconName = Platform.OS === 'ios'
-              ? `ios-information-circle${focused ? '' : '-outline'}`
-              : 'md-information-circle';
+              ? `ios-leaf${focused ? '' : '-outline'}`
+              : 'md-leaf';
             break;
           case 'Links':
             iconName = Platform.OS === 'ios'
@@ -39,8 +39,8 @@ export default TabNavigator(
             break;
           case 'Settings':
             iconName = Platform.OS === 'ios'
-              ? `ios-options${focused ? '' : '-outline'}`
-              : 'md-options';
+              ? `ios-grid${focused ? '' : '-outline'}`
+              : 'md-grid';
         }
         return (
           <Ionicons

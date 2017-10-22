@@ -11,6 +11,8 @@ export default class CropProfile extends React.Component {
     }
 static navigationOptions = ({ navigation }) => ({
     title: `${navigation.state.params.text}`,
+      headerStyle: { backgroundColor: 'white' },
+  headerTitleStyle: { fontWeight: '100' },
   });
 
 
@@ -18,11 +20,11 @@ static navigationOptions = ({ navigation }) => ({
      const { params } = this.props.navigation.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.row}> Start of the day: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
-        <Text style={styles.row}> Minimum moisture level:</Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
-        <Text style={styles.row}> Maximum moisture level: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
-        <Text style={styles.row}> Minimum flow: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
-        <Text style={styles.row}> Maximum flow: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
+        <Text style={styles.row}> Start of the day: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.time}></SelfInput></View>
+        <Text style={styles.row}> Minimum moisture level:</Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.min}></SelfInput></View>
+        <Text style={styles.row}> Maximum moisture level: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.max}></SelfInput></View>
+        <Text style={styles.row}> Minimum flow: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.min1}></SelfInput></View>
+        <Text style={styles.row}> Maximum flow: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.max2}></SelfInput></View>
         </View>
     )
   }

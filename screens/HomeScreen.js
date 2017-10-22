@@ -13,11 +13,11 @@ export default class HomeScreen extends React.Component {
         this.state = {
             nextID: 5,
             sampleText: [
-                {id: 0, text: "Corn", waterVolume: "1.29", min: "1", max: "2"},
-                {id: 1, text: 'Pumpkin', waterVolume: "1.00", min: "1", max: "2"},
-                {id: 2, text: 'Bean', waterVolume: "1.01", min: "1", max: "2"},
-                {id: 3, text: 'Squash', waterVolume: "1.12", min: "1", max: "2"},
-                {id: 4, text: "Apple", waterVolume: "1.12", min: "1", max: "2"},
+                {id: 0, text: "Corn", time: "7:00 a.m.", min: "0.700", max: "2.000", min1: "0.020", max2: "0.040"},
+                {id: 1, text: 'Pumpkin', time: "1:00 p.m.", min: "0.300", max: "1.200", min1: "0.020", max2: "0.090"},
+                {id: 2, text: 'Bean', time: "11:00 a.m.", min: "0.000", max: "0.800", min1: "0.010", max2: "0.080"},
+                {id: 3, text: 'Squash', time: "9:10 a.m.", min: "1.200", max: "4.000", min1: "0.030", max2: "0.100"},
+                {id: 4, text: "Apple", time: "10:00 p.m.", min: "5.000", max: "5.200", min1: "0.040", max2: "0.070"},
             ]
         }
         this.addInput = this.addInput.bind(this);
@@ -27,7 +27,7 @@ export default class HomeScreen extends React.Component {
 
     renderItem = ({item}) => {
     return (
-        <TouchableOpacity onPress={() => {const { navigate } = this.props.navigation; navigate('Crops', { setInput: this.setInput, text: item.text, waterVolume: item.waterVolume, min: item.min, max: item.max,})}}><Row style={styles.row}><Text style={styles.text}>{item.text}</Text></Row></TouchableOpacity>
+        <TouchableOpacity onPress={() => {const { navigate } = this.props.navigation; navigate('Crops', { setInput: this.setInput, text: item.text, time: item.time, min: item.min, max: item.max, min1: item.min1, max2: item.max2})}}><Row style={styles.row}><Text style={styles.text}>{item.text}</Text></Row></TouchableOpacity>
     )
   }
 

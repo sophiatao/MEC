@@ -5,7 +5,8 @@ import SelfInput from "./SelfInput";
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Nodes',
+    title: 'Irrigation Nodes',
+
   };
 
   render() {
