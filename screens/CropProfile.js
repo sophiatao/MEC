@@ -18,11 +18,11 @@ static navigationOptions = ({ navigation }) => ({
      const { params } = this.props.navigation.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.row}> Start of the day: </Text><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput>
-        <Text style={styles.row}> Minimum moisture level:</Text><SelfInput texti={params.min}></SelfInput>
-        <Text style={styles.row}> Maximum moisture level: </Text><SelfInput texti={params.max}></SelfInput>
-        <Text style={styles.row}> Minimum flow: </Text><SelfInput texti={params.max}></SelfInput>
-        <Text style={styles.row}> Maximum flow: </Text><SelfInput texti={params.max}></SelfInput>
+        <Text style={styles.row}> Start of the day: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
+        <Text style={styles.row}> Minimum moisture level:</Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
+        <Text style={styles.row}> Maximum moisture level: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
+        <Text style={styles.row}> Minimum flow: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
+        <Text style={styles.row}> Maximum flow: </Text><View style={styles.selfinput}><SelfInput style={styles.selfinput} texti={params.waterVolume}></SelfInput></View>
         </View>
     )
   }
@@ -38,8 +38,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   row: {
-    marginTop: 5,
+    margin: 5,
     borderColor: '#fff',
+    fontWeight: '100',
   },
   text: {
     color: '#fff',
@@ -57,8 +58,8 @@ const styles = StyleSheet.create({
     fontWeight: '100',
   },
   selfinput: {
-    borderWidth: 0.5,
-    borderRadius: 10,
+    marginLeft: 5,
+    backgroundColor: 'whitesmoke',
   }
 
 });

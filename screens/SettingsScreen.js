@@ -14,34 +14,34 @@ export default class SettingsScreen extends React.Component {
     return (
     <Grid>
         <Row>
-            <Col style={styles.red}><Text style={styles.text}>Apple</Text></Col>
-            <Col style={styles.green}><Text style={styles.text}>Apple</Text></Col>
-            <Col style={styles.yellow}><Text style={styles.text}>Apple</Text></Col>
-            <Col style={styles.yellow}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.red}><SelfInput texti={"Apple"} /></Col>
+            <Col style={styles.green}><SelfInput texti={"Apple"} /></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Apple"} /></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Squash"} /></Col>
         </Row>
         <Row>
-            <Col style={styles.yellow}><Text style={styles.text}>Squash</Text></Col>
-            <Col style={styles.green}><Text style={styles.text}>Squash</Text></Col>
-            <Col style={styles.red}><Text style={styles.text}>Squash</Text></Col>
-            <Col style={styles.yellow}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Squash"} /></Col>
+            <Col style={styles.green}><SelfInput texti={"Squash"} /></Col>
+            <Col style={styles.red}><SelfInput texti={"Squash"} /></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Squash"} /></Col>
         </Row>
         <Row>
-            <Col style={styles.red}><Text style={styles.text}>Squash</Text></Col>
-            <Col style={styles.green}><Text style={styles.text}>Squash</Text></Col>
-            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
-            <Col style={styles.red}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.red}><SelfInput texti={"Squash"} /></Col>
+            <Col style={styles.green}><SelfInput texti={"Squash"} /></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Corn"} /></Col>
+            <Col style={styles.red}><SelfInput texti={"Squash"} /></Col>
         </Row>
         <Row>
-            <Col style={styles.green}><Text style={styles.text}>Corn</Text></Col>
-            <Col style={styles.red}><Text style={styles.text}>Corn</Text></Col>
-            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
-            <Col style={styles.green}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.green}><SelfInput texti={"Corn"} /></Col>
+            <Col style={styles.red}><SelfInput texti={"Corn"} /></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Corn"} /></Col>
+            <Col style={styles.green}><SelfInput texti={"Corn"} /></Col>
         </Row>
         <Row>
-            <Col style={styles.green}><Text style={styles.text}>Corn</Text></Col>
-            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
-            <Col style={styles.red}><Text style={styles.text}>Corn</Text></Col>
-            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.green}><SelfInput texti={"Corn"} /></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Corn"} /></Col>
+            <Col style={styles.red}><SelfInput texti={"Corn"} /></Col>
+            <Col style={styles.yellow}><SelfInput texti={"Corn"} /></Col>
         </Row>
     </Grid>
     )

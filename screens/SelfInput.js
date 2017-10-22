@@ -13,7 +13,6 @@ export default class Input extends Component {
     const {text} = this.state
 
     if (!text) return // Don't submit if empty
-    this.props.setInput(param, text);
     this.setState({texti: text})
   }
 
@@ -35,7 +34,7 @@ export default class Input extends Component {
 const styles = StyleSheet.create({
   input: {
     padding: 5,
-    height: 50,
+    fontSize: 12,
     fontFamily: 'Helvetica',
     fontWeight: '100',
   },
