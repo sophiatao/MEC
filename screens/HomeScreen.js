@@ -21,12 +21,13 @@ export default class HomeScreen extends React.Component {
             ]
         }
         this.addInput = this.addInput.bind(this);
+        this.setInput = this.setInput.bind(this);
     }
 
 
     renderItem = ({item}) => {
     return (
-        <TouchableOpacity onPress={() => {const { navigate } = this.props.navigation; navigate('Crops', { text: item.text, waterVolume: item.waterVolume, min: item.min, max: item.max,})}}><Row style={styles.row}><Text>{item.text}</Text></Row></TouchableOpacity>
+        <TouchableOpacity onPress={() => {const { navigate } = this.props.navigation; navigate('Crops', { setInput: this.setInput, text: item.text, waterVolume: item.waterVolume, min: item.min, max: item.max,})}}><Row style={styles.row}><Text style={styles.text}>{item.text}</Text></Row></TouchableOpacity>
     )
   }
 
@@ -38,11 +39,20 @@ export default class HomeScreen extends React.Component {
     this.setState({nextID: nextNextID, sampleText: arr});
   }
 
+  setInput(param, text) {
+        arr = this.state.sampleText;
+    nextNextID = this.state.nextID + 1;
+    arr.unshift({$: this.state.nextID, text: content});
+    this.setState({nextID: nextNextID, sampleText: arr});
+
+  }
+
   render() {
     /* Go ahead and delete ExpoConfigView and replace it with your
      * content, we just wanted to give you a quick view of your config */
     return (
         <View style={styles.container}>
+        <Text style={styles.header}>To add crop, enter crop name and pull down to update</Text>
         <Input addInput={this.addInput} />
         <FlatList
           data={this.state.sampleText}
@@ -70,17 +80,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   text: {
-    color: '#fff',
+    color: '#000',
     fontFamily: 'Helvetica',
     fontWeight: '100',
   },
   header: {
     paddingTop: 15,
-    fontSize: 24,
+    fontSize: 16,
     marginLeft: 0,
-    backgroundColor: 'white',
     marginTop: 0,
-    color: '#22485e',
+    color: '#000',
     fontFamily: 'Helvetica',
     fontWeight: '100',
   },

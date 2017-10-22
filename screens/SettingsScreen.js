@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import { Col, Row, Grid } from "react-native-easy-grid";
+import SelfInput from "./SelfInput";
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
@@ -13,28 +14,34 @@ export default class SettingsScreen extends React.Component {
     return (
     <Grid>
         <Row>
-            <Col style={styles.red}><Text>Corn</Text></Col>
-            <Col style={styles.green}><Text>Corn</Text></Col>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
+            <Col style={styles.red}><Text style={styles.text}>Apple</Text></Col>
+            <Col style={styles.green}><Text style={styles.text}>Apple</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Apple</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Squash</Text></Col>
         </Row>
         <Row>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
-            <Col style={styles.green}><Text>Corn</Text></Col>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.green}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.red}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Squash</Text></Col>
         </Row>
         <Row>
-            <Col style={styles.green}><Text>Corn</Text></Col>
-            <Col style={styles.red}><Text>Corn</Text></Col>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
-            <Col style={styles.green}><Text>Corn</Text></Col>
+            <Col style={styles.red}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.green}><Text style={styles.text}>Squash</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.red}><Text style={styles.text}>Squash</Text></Col>
         </Row>
         <Row>
-            <Col style={styles.green}><Text>Corn</Text></Col>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
-            <Col style={styles.red}><Text>Corn</Text></Col>
-            <Col style={styles.yellow}><Text>Corn</Text></Col>
+            <Col style={styles.green}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.red}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.green}><Text style={styles.text}>Corn</Text></Col>
+        </Row>
+        <Row>
+            <Col style={styles.green}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.red}><Text style={styles.text}>Corn</Text></Col>
+            <Col style={styles.yellow}><Text style={styles.text}>Corn</Text></Col>
         </Row>
     </Grid>
     )
@@ -43,12 +50,35 @@ export default class SettingsScreen extends React.Component {
 
 const styles = StyleSheet.create({
     red: {
-        backgroundColor: "red",
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "#e88178",
+        borderRadius: 10,
+        margin: 10,
     },
     green: {
-        backgroundColor: "green",
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "#80d666",
+        borderRadius: 10,
+        margin: 10,
     },
     yellow: {
-        backgroundColor: "yellow",
-    }
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "#fcfc80",
+        borderRadius: 10,
+        margin: 10,
+    },
+    text: {
+    color: '#000',
+    fontFamily: 'Helvetica',
+    fontWeight: '100',
+  },
 })
