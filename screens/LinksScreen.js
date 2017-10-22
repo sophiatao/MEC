@@ -12,10 +12,14 @@ export default class LinksScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.header}>Usage guidelines: {"\n"}</Text>
-        <Row style={styles.row}><Text style={styles.text}>This irrigation app will help give crops the optimum amount of water based on your parameters and data from a precipitation database.</Text></Row>
+        <Col style={styles.row}><Text style={styles.text}>This irrigation app will help give crops the optimum amount of water based on your parameters and data from a precipitation database. You can check the status of each irrigation node under the "Irrigation Nodes" screen. {"\n"}</Text>
+        <Row><Text style={styles.textindent}>Green node: node is working as normal. Plant is well-watered.</Text></Row>
+        <Row><Text style={styles.textindent}>Yellow node: node may be malfunction and/or extreme weather has occurred. Moisture level for node has strayed beyond 10% above or below preferred moisture constraints.</Text></Row>
+        <Row><Text style={styles.textindent}>Red node: according to the water flow sensor, the node is malfunctioning and needs to be replaced.</Text></Row>
+        </Col>
         <Row style={styles.row}><Text style={styles.text}>1. Add a crop in the "Crop profiles" screen according to what you would like to plant.</Text></Row>
-        <Col style={styles.row}><Row><Text style={styles.text}>2. Fill in parameters for each crop:</Text></Row>
-        <Row><Text style={styles.textindent}>Name of crop: What you will be planting; this is to be filled in in the Crop Profiles.</Text></Row>
+        <Col style={styles.row}><Row><Text style={styles.text}>2. Fill in parameters for each crop:{"\n"}</Text></Row>
+        <Row><Text style={styles.textindent}>Name of crop: What you will be planting; this is to be filled in in the "Crop Profiles" screen.</Text></Row>
         <Row><Text style={styles.textindent}>Start of the day: The time at which the irrigation system will start.</Text></Row>
         <Row><Text style={styles.textindent}>Minimum moisture level: The minimum soil moisture constraint for the crop.</Text></Row>
         <Row><Text style={styles.textindent}>Maximum moisture level: The maximum soil moisture constraint for the crop.</Text></Row>
@@ -51,7 +55,8 @@ const styles = StyleSheet.create({
     color: '#000',
     fontFamily: 'Helvetica',
     fontWeight: '100',
-    padding: 2,
+    paddingBottom: 5,
+    fontSize: 12,
     marginLeft: 10,
   },
   header: {
