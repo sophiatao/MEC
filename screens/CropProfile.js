@@ -9,13 +9,13 @@ export default class CropProfile extends React.Component {
         super(props);
     }
   static navigationOptions = {
-    title: "Hello",
+    title: "Crop",
   };
 
 
   render() {
     return (
-        <Text> Hello</Text>
+        <Text> {this.props.navigation.state.text}</Text>
     )
   }
 }

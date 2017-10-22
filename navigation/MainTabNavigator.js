@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { TabNavigator, TabBarBottom } from 'react-navigation';
+import { TabNavigator, TabBarBottom, StackNavigator} from 'react-navigation';
 
 import Colors from '../constants/Colors';
 
@@ -9,15 +9,13 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-import CropProfile from '../screens/CropProfile';
+import CropNavigator from '../screens/CropNavigator';
+
 
 export default TabNavigator(
   {
     Home: {
-      screen: HomeScreen,
-    },
-    Links: {
-      screen: CropProfile,
+      screen: CropNavigator,
     },
     Settings: {
       screen: SettingsScreen,
@@ -60,3 +58,4 @@ export default TabNavigator(
     swipeEnabled: false,
   }
 );
+

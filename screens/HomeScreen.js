@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, TextInput, Button } from 'react-native';
+import {View, Text, StyleSheet, FlatList, TextInput, TouchableOpacity } from 'react-native';
+import {StackNavigator} from 'react-navigation'
 import { Col, Grid, Row } from "react-native-easy-grid";
 import Input from './Input';
 import CropProfile from './CropProfile';
@@ -22,13 +23,10 @@ export default class HomeScreen extends React.Component {
         this.addInput = this.addInput.bind(this);
         this.navigateToCrop = this.navigateToCrop.bind(this);
     }
-  static navigationOptions = {
-    title: 'Crop profiles',
-  };
 
     renderItem = ({item}) => {
     return (
-        <Row style={styles.row}><Button title={item.text} onPress={() => {const { navigate } = this.props.navigation; navigate('Links', { text: item.text, waterVolume: this.state.waterVolume, min: this.state.min, max: this.state.max,})}}></Button></Row>
+        <TouchableOpacity onPress={() => {const { navigate } = this.props.navigation; navigate('Crops', { text: item.text, waterVolume: this.state.waterVolume, min: this.state.min, max: this.state.max,})}}><Row style={styles.row}><Text>{item.text}</Text></Row></TouchableOpacity>
     )
   }
 
@@ -42,7 +40,6 @@ export default class HomeScreen extends React.Component {
     nextNextID = this.state.nextID + 1;
     arr.unshift({id: this.state.nextID, text: content});
     this.setState({nextID: nextNextID, sampleText: arr});
-    alert(this.state.sampleText[5].text);
   }
 
   render() {
@@ -50,7 +47,6 @@ export default class HomeScreen extends React.Component {
      * content, we just wanted to give you a quick view of your config */
     return (
         <View style={styles.container}>
-        <Text style={styles.header}>Add a crop:</Text>
         <Input addInput={this.addInput} />
         <FlatList
           data={this.state.sampleText}
@@ -62,17 +58,19 @@ export default class HomeScreen extends React.Component {
   }
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: 'skyblue',
+    backgroundColor: 'white',
   },
   row: {
     marginBottom: 5,
     padding: 15,
-    backgroundColor: '#22485e',
+    backgroundColor: 'whitesmoke',
     borderRadius: 10,
   },
   text: {
@@ -84,7 +82,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     fontSize: 24,
     marginLeft: 0,
-    backgroundColor: 'skyblue',
+    backgroundColor: 'white',
     marginTop: 0,
     color: '#22485e',
     fontFamily: 'Helvetica',
